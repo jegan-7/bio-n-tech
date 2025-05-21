@@ -1,4 +1,4 @@
-name: Deploy Frontend to S3 and Invalidate CloudFront
+name: Deploy Vite Frontend to S3 and Invalidate CloudFront
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm ci --legacy-peer-deps
 
       - name: Build project
         run: npm run build
@@ -35,6 +35,10 @@ jobs:
           ls -la
           echo "Listing dist directory:"
           ls -la dist
+          if [ ! -f "dist/index.html" ]; then
+            echo "❌ index.html not found in dist/. Build might have failed."
+            exit 1
+          fi
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
