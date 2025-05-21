@@ -3,7 +3,7 @@ name: Deploy Frontend to S3 and Invalidate CloudFront
 on:
   push:
     branches:
-      - main
+      - main  # Change to your deployment branch if needed
 
 permissions:
   id-token: write
@@ -28,6 +28,13 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Verify build folder
+        run: |
+          echo "Listing contents after build:"
+          ls -la
+          echo "Listing build directory:"
+          ls -la build
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
