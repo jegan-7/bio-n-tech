@@ -1,0 +1,100 @@
+.web-page-generator {
+    background-color: #1e1e28;
+    color: #ffffff;
+    /* height: 100vh; */
+  }
+  
+  .divider {
+    border-color: #8e8e8e;
+  }
+  
+  .form-label-custom {
+    color: #ffffff;
+  }
+  
+  .input-dark::placeholder {
+    color: #8e8e8e;
+    opacity: 1;
+  }
+  
+  .email-title {
+    color: #2222;
+    font-weight: 500;
+  }
+  
+  .generate-btn {
+    background-color: #015A63;
+    border: none;
+    width: 220px;
+    padding: 10px;
+  }
+
+  .generate-btn:hover,
+.generate-btn:focus,
+.generate-btn:active,
+.generate-btn:focus:active,
+.generate-btn:focus-visible {
+  background-color: #015A63 !important;
+  border: none !important;
+  box-shadow: none !important; /* Removes blue glow on focus */
+  color: white !important;
+}
+  
+  .input-dark-web-page-generator {
+    background-color: #2e2f3b;
+    border: 1px solid #707070;
+    color: white;
+  }
+  
+ /* Increase size of banner card */
+.banner-card {
+    background-color: #252632;
+    border: none;
+    height: 100%; /* Allow full height of column */
+    min-height: 450px; /* Slightly taller than default */
+    padding: 10px;
+  }
+  
+  /* Dropdown Toggle Style */
+  .custom-dropdown-toggle-web-page-generator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e2f3b  !important;;
+    color: white  !important;;
+    border: 1px solid #707070;
+  }
+  
+  /* Dropdown Menu Style */
+  .custom-dropdown-menu-web-page-generator {
+    background-color: #2e2f3b  !important;;
+  }
+  
+  /* Dropdown Item Style */
+  .custom-dropdown-item-web-page-generator {
+    color: white !important;
+    border-bottom: 0.5px solid #6c757d;
+  }
+  
+  .custom-dropdown-item-web-page-generator:hover,
+  .custom-dropdown-item-web-page-generator:focus {
+    background-color: #3a3b4b;
+    color: white !important;
+  }
+  
+
+  /* Ensure white text always in dropdown */
+.custom-dropdown-menu-web-page-generator .dropdown-item {
+    color: white !important;
+    border-bottom: 0.5px solid #6c757d;
+  }
+  
+
+  .custom-dropdown-menu-web-page-generator .dropdown-item:hover,
+  .custom-dropdown-menu-web-page-generator .dropdown-item:focus {
+    background-color: #3a3b4b !important;
+    color: white !important;
+  }
+  
+
+  

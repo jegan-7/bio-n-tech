@@ -1,0 +1,25 @@
+.card {
+    border: 1px solid #444;
+    border-radius: 8px;
+  }
+  
+  .nav-pills .nav-link.active {
+    background-color: transparent;
+    color: #005A64;
+    border-bottom: 2px solid #005A64;
+    border-radius: 0;
+  }
+
+  .btn-teal-outline {
+    background-color: #ECFFF7;
+    border: 1px solid #015A63;
+    color: #015A63;
+    width: 100px;
+  }
+  
+  .btn-teal-outline:hover {
+    background-color: #d8f6ee;
+    color: #014c4f;
+    border-color: #014c4f;
+  }
+  

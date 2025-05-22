@@ -1,0 +1,38 @@
+.webpage-generator {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+  .webpage-preview-card {
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .preview-content {
+    background-color: #fdfdfd;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    max-height: 500px;
+    overflow: auto;
+  }
+  
+  .preview-content h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .preview-content p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  
+  

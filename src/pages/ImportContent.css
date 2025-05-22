@@ -1,0 +1,25 @@
+@media (max-width: 768px) {
+    .nav-pills .nav-link {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+    }
+  
+    .btn {
+      width: 100% !important;
+    }
+  }
+
+  .import-overlay {
+    position: fixed;
+    top: 60px; /* if navbar is fixed, adjust accordingly */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px); /* to exclude navbar height */
+    background-color: rgba(0, 0, 0, 0.75); /* semi-transparent backdrop */
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    overflow-y: auto;
+  }

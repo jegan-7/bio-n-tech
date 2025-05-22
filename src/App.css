@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'NeueHaasGroteskDisplay Pro';
+    src: url('./assets/fonts/NeueHaasGroteskDisplayPro.woff2') format('woff2'),
+         url('./assets/fonts/NeueHaasGroteskDisplayPro.woff') format('woff');
+  }
+  
+  body {
+    font-family: 'NeueHaasGroteskDisplay Pro', sans-serif !important;
+    background-color: #252632;
+    color: white;
+  }

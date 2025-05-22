@@ -1,0 +1,147 @@
+    .email-generator-preview {
+        background-color: #1e1e28;
+        color: white;
+    }
+    
+    .email-title {
+        font-weight: 500;
+        color: #2222;
+        margin: 0;
+    }
+    
+    .divider {
+        border-color: #555;
+    }
+
+    .thin-gray-border {
+        border-bottom: 0.5px solid #555;
+      }
+    
+    .section-heading {
+        font-weight: 500;
+        color: white;
+    }
+    
+    .input-dark {
+        background-color: #2e2f3b;
+        color: white;
+        border: 1px solid #707070;
+    }
+
+    .input-dark:hover,.input-dark:focus {
+        background-color: #2e2f3b;
+        color: white;
+        border: 1px solid #707070;
+        box-shadow: none;
+    }
+    
+    .input-dark::placeholder {
+        color: #8e8e8e;
+    }
+    
+    .btn-save-draft {
+        background-color: #ECFFF7CC;
+        color: #015A63;
+        border: #015A63;
+        padding: 8px 20px;
+    }
+    
+    .btn-send-email {
+        background-color: #015A63;
+        color: white;
+        border: none;
+        padding: 8px 20px;
+    }
+    
+    .btn-send-email:hover, .btn-send-email:focus,
+    .btn-send-email:active,.btn-send-email:focus-visible,
+    .btn-send-email:focus:active
+    {
+        background-color: #015A63;
+        color: white;
+        border: none;
+        padding: 8px 20px;
+    }
+
+    .btn-save-draft:hover {
+        background-color: #ECFFF7CC;
+        color: #015A63;
+        border: #015A63;
+        padding: 8px 20px;
+    }
+    
+    .back-btn {
+        background-color: #ECFFF7CC;
+        color: #015A63;
+        border: #015A63;
+        padding: 8px 20px;
+    }
+    .back-btn:hover {
+        background-color: #ECFFF7CC;
+        color: #015A63;
+        border: #015A63;
+        padding: 8px 20px;
+    }
+    
+    .email-preview-wrapper {
+        background-color: #2e2f3b;
+        border: none;
+        border-radius: 8px;
+    }
+    
+    .preview-title {
+        color: white;
+        font-weight: 500;
+    }
+    
+    .email-preview-card {
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+        border: none;
+    }
+    
+    .subject-placeholder {
+        background-color: #f1f1f1;
+        padding: 12px;
+        border-radius: 6px;
+        font-weight: 500;
+    }
+    
+    .email-address {
+        color: #555;
+        margin-left: 8px;
+    }
+    
+    .email-text {
+        white-space: pre-wrap;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .dropdown-menu {
+        background-color: #252632;
+        color: white;
+        border-radius: 6px;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border: 0.5px solid #4D4E5D;
+      }
+      
+      .dropdown-item {
+        color: white;
+        padding: 8px 16px;
+        border-bottom: 0.5px solid #4D4E5D;
+      }
+      
+      .schedule-modal .modal-content {
+        background-color: #2e2f3b;
+        border-radius: 12px;
+        border: none;
+      }
+
+      .schedule-modal-body{
+        background-color: #353647;
+        border-radius: 5px;
+      }
+      
