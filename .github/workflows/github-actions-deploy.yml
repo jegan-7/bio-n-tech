@@ -29,14 +29,14 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Verify dist folder
+      - name: Verify Vite build output
         run: |
-          echo "Listing root directory:"
-          ls -la
           echo "Listing dist directory:"
           ls -la dist
-          if [ ! -f "dist/index.html" ]; then
-            echo "❌ index.html not found in dist/. Build might have failed."
+          echo "Listing assets directory:"
+          ls -la dist/assets
+          if ! ls dist/assets/index-*.js 1> /dev/null 2>&1; then
+            echo "❌ Hashed JS file not found in dist/assets/"
             exit 1
           fi
 
@@ -47,11 +47,16 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: sync Deploy to S3
+      - name: Deploy index.html with no cache
         run: |
-          aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }} --delete
+          aws s3 cp dist/index.html s3://${{ secrets.S3_BUCKET_NAME }}/index.html \
+            --cache-control "no-cache" --content-type "text/html"
 
-      - name: Invalidate CloudFront
+      - name: Deploy assets folder
+        run: |
+          aws s3 sync dist/assets/ s3://${{ secrets.S3_BUCKET_NAME }}/assets/ --delete
+
+      - name: Invalidate CloudFront Cache
         run: |
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
