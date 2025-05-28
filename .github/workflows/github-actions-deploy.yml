@@ -1,55 +1,59 @@
 name: Deploy Frontend to S3 and Invalidate CloudFront
- 
+
 on:
   push:
     branches:
       - main
- 
+
 permissions:
   id-token: write
   contents: read
- 
+
+env:
+  AWS_REGION: us-east-1                    # Replace with your AWS region
+  S3_BUCKET_NAME: frontend-s3-static-web-dev     # Replace with your actual bucket name
+  DISTRIBUTION_ID: E3VZM6PNEVPGN8     # Replace with your actual distribution ID
+
 jobs:
   deploy:
     name: Build and Deploy to S3
     runs-on: ubuntu-latest
- 
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
- 
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
- 
+
       - name: Install dependencies
         run: npm install --legacy-peer-deps
- 
+
       - name: Build project
         run: npm run build
- 
+
       - name: Verify dist folder
         run: |
           echo "Listing root directory:"
           ls -la
           echo "Listing dist directory:"
           ls -la dist
- 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
+
+      - name: Configure AWS credentials using OIDC
+        uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
- 
+          role-to-assume: arn:aws:iam::783764586814:role/oidcrole # Replace with your IAM role ARN
+          role-session-name: github-actions-session
+          aws-region: ${{ env.AWS_REGION }}
+
       - name: Deploy to S3
         run: |
-          aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }} --delete
- 
+          aws s3 sync dist/ s3://${{ env.S3_BUCKET_NAME }} --delete
+
       - name: Invalidate CloudFront
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.DISTRIBUTION_ID }} \
+            --distribution-id ${{ env.DISTRIBUTION_ID }} \
             --paths "/*"
- 
